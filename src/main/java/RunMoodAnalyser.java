@@ -6,6 +6,6 @@ public class RunMoodAnalyser {
         Scanner sc =new Scanner(System.in);
         String yourMood = sc.nextLine();
         MoodAnalyzer mood=new MoodAnalyzer(yourMood);
-        System.out.println(mood.moodAnalyser());
+        System.out.println(mood.analyseMood());
     }
 }
