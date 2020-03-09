@@ -2,6 +2,7 @@ import org.junit.Assert;
 import org.junit.Test;
 public class TestMoodAnalyser {
     public MoodAnalyzer analyzer;
+
     @Test
     public void moodAnalyser_WhenMessageIncludesSad_ShouldReturnSadMood() throws MoodAnalysisException {
         analyzer = new MoodAnalyzer("I am in Sad Mood");
@@ -27,6 +28,16 @@ public class TestMoodAnalyser {
             String result = analyzer.analyseMood();
         }catch( MoodAnalysisException e){
             Assert.assertEquals("Please enter valid mood",e.getMessage());
+        }
+    }
+
+    @Test
+    public void moodAnalyser_WhenMessageIsEmpty_ShouldThrowException() throws MoodAnalysisException {
+        try{
+            analyzer = new MoodAnalyzer("");
+            analyzer.analyseMood();
+        }catch ( MoodAnalysisException e){
+            Assert.assertEquals("You have entered empty mood..!",e.getMessage());
         }
     }
 }
