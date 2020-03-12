@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TestMoodAnalyser" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-03-12T12:31:16" hostname="administrator-LIVA-Z2V" time="0.004">
+<testsuite name="TestMoodAnalyser" tests="1" skipped="1" failures="0" errors="0" timestamp="2020-03-12T12:52:02" hostname="administrator-LIVA-Z2V" time="35.106">
   <properties/>
-  <testcase name="givenHappyMessage_WhenProper_ShouldReturnHappy" classname="TestMoodAnalyser" time="0.004"/>
+  <testcase name="givenHappyMessage_WhenImproper_ShouldThrowMoodAnalysisException" classname="TestMoodAnalyser" time="35.106">
+    <skipped/>
+  </testcase>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
