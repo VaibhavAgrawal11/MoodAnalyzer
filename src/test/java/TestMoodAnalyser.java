@@ -121,6 +121,5 @@ public class TestMoodAnalyser {
         } catch (MoodAnalysisException e) {
             e.printStackTrace();
         }
-
     }
 }
