@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TestMoodAnalyser" tests="8" skipped="0" failures="0" errors="0" timestamp="2020-03-12T10:08:44" hostname="administrator-LIVA-Z2V" time="0.034">
+<testsuite name="TestMoodAnalyser" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-03-12T10:40:12" hostname="administrator-LIVA-Z2V" time="0.005">
   <properties/>
-  <testcase name="moodAnalyser_WhenMessageIsEmpty_ShouldThrowException" classname="TestMoodAnalyser" time="0.005"/>
-  <testcase name="givenClassName_WhenImproper_ShouldThrowMoodAnalysisException" classname="TestMoodAnalyser" time="0.001"/>
-  <testcase name="moodAnalyser_WhenMessageNotIncludesSad_ShouldReturnHappy" classname="TestMoodAnalyser" time="0.0"/>
-  <testcase name="moodAnalyser_WhenMessageNull_ShouldThrowException" classname="TestMoodAnalyser" time="0.002"/>
-  <testcase name="givenClassConstructor_WhenImproper_ShouldThrowMoodAnalysisException" classname="TestMoodAnalyser" time="0.001"/>
-  <testcase name="givenMoodAnalyzerClass_WhenProper_ShouldReturnObject" classname="TestMoodAnalyser" time="0.001"/>
-  <testcase name="moodAnalyser_WhenMessageIncludesSad_ShouldReturnSadMood" classname="TestMoodAnalyser" time="0.0"/>
-  <testcase name="givenHappyMood_WithDefaultConstructor_ShouldReturnHappy" classname="TestMoodAnalyser" time="0.001"/>
+  <testcase name="givenClassName_WhenImproper_ShouldThrow_MoodAnalysisException_2" classname="TestMoodAnalyser" time="0.005"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

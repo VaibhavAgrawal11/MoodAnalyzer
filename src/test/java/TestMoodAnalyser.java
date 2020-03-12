@@ -55,7 +55,7 @@ public class TestMoodAnalyser {
     }
 
     @Test
-    public void givenClassName_WhenImproper_ShouldThrowMoodAnalysisException() {
+    public void givenClassName_WhenImproper_ShouldThrow_MoodAnalysisException() {
         try {
             Constructor<?> constructor = MoodAnalyzerFactory.getConstructor("CroodAnalyzer");
         } catch (MoodAnalysisException e) {
@@ -81,6 +81,15 @@ public class TestMoodAnalyser {
             boolean equal = analyzer.equals(moodObject);
             Assert.assertTrue(equal);
         } catch (MoodAnalysisException e) {
+        }
+    }
+
+    @Test
+    public void givenClassName_WhenImproper_ShouldThrow_MoodAnalysisException_2() {
+        try {
+            Constructor<?> constructor = MoodAnalyzerFactory.getConstructor("CroodAnalyzer",String.class);
+        } catch (MoodAnalysisException e) {
+            Assert.assertEquals(MoodAnalysisException.ExceptionType.NO_SUCH_CLASS,e.type);
         }
     }
 }
