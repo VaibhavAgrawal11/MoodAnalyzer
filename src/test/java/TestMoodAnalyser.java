@@ -92,4 +92,23 @@ public class TestMoodAnalyser {
             Assert.assertEquals(MoodAnalysisException.ExceptionType.NO_SUCH_CLASS,e.type);
         }
     }
+
+    @Test
+    public void givenClassConstructor_WhenImproper_ShouldThrowMoodAnalysisException_2() throws MoodAnalysisException{
+        try {
+            Constructor<?> constructor = MoodAnalyzerFactory.getConstructor("MoodAnalyzer",String.class,Integer.class);
+        } catch (MoodAnalysisException e) {
+            Assert.assertEquals(MoodAnalysisException.ExceptionType.NO_SUCH_METHOD,e.type);
+        }
+    }
+
+    @Test
+    public void givenClassConstructor_WhenImproper_ShouldThrowMoodAnalysisException_3() throws MoodAnalysisException{
+        try {
+            Constructor<?> constructor = MoodAnalyzerFactory.getConstructor("MoodAnalyzer",Character.class);
+        } catch (MoodAnalysisException e) {
+            Assert.assertEquals(MoodAnalysisException.ExceptionType.NO_SUCH_METHOD,e.type);
+        }
+    }
+
 }

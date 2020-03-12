@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TestMoodAnalyser" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-03-12T10:40:12" hostname="administrator-LIVA-Z2V" time="0.005">
+<testsuite name="TestMoodAnalyser" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-03-12T10:50:23" hostname="administrator-LIVA-Z2V" time="0.007">
   <properties/>
-  <testcase name="givenClassName_WhenImproper_ShouldThrow_MoodAnalysisException_2" classname="TestMoodAnalyser" time="0.005"/>
+  <testcase name="givenClassConstructor_WhenImproper_ShouldThrowMoodAnalysisException_3" classname="TestMoodAnalyser" time="0.007"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
