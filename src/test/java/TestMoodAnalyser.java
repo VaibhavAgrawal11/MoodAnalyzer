@@ -48,9 +48,18 @@ public class TestMoodAnalyser {
     @Test
     public void givenHappyMood_WithDefaultConstructor_ShouldReturnHappy() throws NoSuchMethodException, MoodAnalysisException, ClassNotFoundException, IllegalAccessException, InstantiationException, InvocationTargetException {
         analyzer = new MoodAnalyzer();
-        Constructor<?> constructor = MoodAnalyzerFactory.getConstructor();
+        Constructor<?> constructor = MoodAnalyzerFactory.getConstructor("MoodAnalyzer");
         Object myObject = MoodAnalyzerFactory.createMoodAnalyzer(constructor);
         boolean equal = analyzer.equals(myObject);
         Assert.assertTrue(equal);
+    }
+
+    @Test
+    public void givenClassName_WhenImproper_ShouldThrowMoodAnalysisException() {
+        try {
+            Constructor<?> constructor = MoodAnalyzerFactory.getConstructor("CroodAnalyzer");
+        } catch (MoodAnalysisException e) {
+            Assert.assertEquals(MoodAnalysisException.ExceptionType.NO_SUCH_CLASS,e.type);
+        }
     }
 }
