@@ -27,4 +27,18 @@ public class MoodAnalyzerFactory {
             throw new MoodAnalysisException(e,MoodAnalysisException.ExceptionType.METHOD_INVOCATION_ISSUE);
         }
     }
+
+    public static Object invokeMethod(Object moodObject, String analyseMood) throws MoodAnalysisException {
+        try {
+            Method callMethod = moodObject.getClass().getMethod(analyseMood);
+            Object result = callMethod.invoke(moodObject);
+            return result;
+        } catch (IllegalAccessException e) {
+            throw new MoodAnalysisException(e,MoodAnalysisException.ExceptionType.NO_ACCESS);
+        } catch (InvocationTargetException e) {
+            throw new MoodAnalysisException(e,MoodAnalysisException.ExceptionType.METHOD_INVOCATION_ISSUE);
+        } catch (NoSuchMethodException e) {
+            throw new MoodAnalysisException(e,MoodAnalysisException.ExceptionType.NO_SUCH_METHOD);
+        }
+    }
 }
