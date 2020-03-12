@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TestMoodAnalyser" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-03-12T07:24:42" hostname="administrator-LIVA-Z2V" time="0.028">
+<testsuite name="TestMoodAnalyser" tests="7" skipped="0" failures="0" errors="0" timestamp="2020-03-12T09:02:03" hostname="administrator-LIVA-Z2V" time="0.067">
   <properties/>
-  <testcase name="givenClassName_WhenImproper_ShouldThrowMoodAnalysisException" classname="TestMoodAnalyser" time="0.028"/>
+  <testcase name="moodAnalyser_WhenMessageIsEmpty_ShouldThrowException" classname="TestMoodAnalyser" time="0.005"/>
+  <testcase name="givenClassName_WhenImproper_ShouldThrowMoodAnalysisException" classname="TestMoodAnalyser" time="0.008"/>
+  <testcase name="moodAnalyser_WhenMessageNotIncludesSad_ShouldReturnHappy" classname="TestMoodAnalyser" time="0.004"/>
+  <testcase name="moodAnalyser_WhenMessageNull_ShouldThrowException" classname="TestMoodAnalyser" time="0.006"/>
+  <testcase name="givenClassConstructor_WhenImproper_ShouldThrowMoodAnalysisException" classname="TestMoodAnalyser" time="0.002"/>
+  <testcase name="moodAnalyser_WhenMessageIncludesSad_ShouldReturnSadMood" classname="TestMoodAnalyser" time="0.001"/>
+  <testcase name="givenHappyMood_WithDefaultConstructor_ShouldReturnHappy" classname="TestMoodAnalyser" time="0.005"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
