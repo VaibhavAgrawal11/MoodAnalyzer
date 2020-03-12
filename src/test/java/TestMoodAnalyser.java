@@ -1,5 +1,9 @@
 import org.junit.Assert;
 import org.junit.Test;
+
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
+
 public class TestMoodAnalyser {
     public MoodAnalyzer analyzer;
 
@@ -39,5 +43,14 @@ public class TestMoodAnalyser {
         }catch ( MoodAnalysisException e){
             Assert.assertEquals("You have entered empty mood..!",e.getMessage());
         }
+    }
+
+    @Test
+    public void givenHappyMood_WithDefaultConstructor_ShouldReturnHappy() throws NoSuchMethodException, MoodAnalysisException, ClassNotFoundException, IllegalAccessException, InstantiationException, InvocationTargetException {
+        analyzer = new MoodAnalyzer();
+        Constructor<?> constructor = MoodAnalyzerFactory.getConstructor();
+        Object myObject = MoodAnalyzerFactory.createMoodAnalyzer(constructor);
+        boolean equal = analyzer.equals(myObject);
+        Assert.assertTrue(equal);
     }
 }
