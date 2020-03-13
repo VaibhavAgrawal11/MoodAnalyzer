@@ -43,13 +43,16 @@ public class MoodAnalyzerFactory {
         }
     }
 
-    public static void setFieldValue(Object moodObject, String fieldName, String fieldValue) {
+    public static void setFieldValue(Object moodObject, String fieldName, String fieldValue) throws MoodAnalysisException {
         try {
             Class<?> className = moodObject.getClass();
             Field field = className.getDeclaredField(fieldName);
             field.set(moodObject,fieldValue);
-        } catch (NoSuchFieldException | IllegalAccessException e) {
-            e.printStackTrace();
+        } catch (NoSuchFieldException e) {
+            throw new MoodAnalysisException(e.getMessage(),MoodAnalysisException.ExceptionType.NO_SUCH_FIELD);
+        } catch (IllegalAccessException e) {
+            throw new MoodAnalysisException(e.getMessage(),MoodAnalysisException.ExceptionType.NO_ACCESS);
         }
+
     }
 }
