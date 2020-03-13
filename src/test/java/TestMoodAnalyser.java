@@ -158,4 +158,15 @@ public class TestMoodAnalyser {
         }
     }
 
+    @Test
+    public void SettingNullMessage_WithReflector_ShouldThrowException() throws MoodAnalysisException{
+        try {
+            Constructor<?> constructor = MoodAnalyzerFactory.getConstructor("MoodAnalyzer");
+            Object moodObject =  MoodAnalyzerFactory.createMoodAnalyzer(constructor);
+            MoodAnalyzerFactory.setFieldValue(moodObject,"message",null);
+            MoodAnalyzerFactory.invokeMethod(moodObject,"analyseMood");
+        } catch (MoodAnalysisException e) {
+            Assert.assertEquals(MoodAnalysisException.ExceptionType.METHOD_INVOCATION_ISSUE,e.type);
+        }
+    }
 }
