@@ -147,4 +147,15 @@ public class TestMoodAnalyser {
         }
     }
 
+    @Test
+    public void givenHappyMessage_WithDefaultConstructor_WhenImproper_ShouldThrowMoodAnalyserException() {
+        try {
+            Constructor<?> constructor = MoodAnalyzerFactory.getConstructor("MoodAnalyzer");
+            Object moodObject =  MoodAnalyzerFactory.createMoodAnalyzer(constructor);
+            MoodAnalyzerFactory.setFieldValue(moodObject,"massage","I am in Happy mood");
+        } catch (MoodAnalysisException e) {
+            Assert.assertEquals(MoodAnalysisException.ExceptionType.NO_SUCH_FIELD,e.type);
+        }
+    }
+
 }
