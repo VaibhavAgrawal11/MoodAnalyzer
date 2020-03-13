@@ -1,7 +1,7 @@
 import java.util.Objects;
 
 public class MoodAnalyzer {
-    private String message;
+    String message;
 
     public  MoodAnalyzer()
     {

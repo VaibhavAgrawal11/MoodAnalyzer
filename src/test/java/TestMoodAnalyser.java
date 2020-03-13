@@ -50,7 +50,7 @@ public class TestMoodAnalyser {
         analyzer = new MoodAnalyzer();
         Constructor<?> constructor = MoodAnalyzerFactory.getConstructor("MoodAnalyzer");
         Object myObject = MoodAnalyzerFactory.createMoodAnalyzer(constructor);
-            boolean equal = analyzer.equals(myObject);
+        boolean equal = analyzer.equals(myObject);
         Assert.assertTrue(equal);
     }
 
@@ -133,4 +133,18 @@ public class TestMoodAnalyser {
             Assert.assertEquals(MoodAnalysisException.ExceptionType.NO_SUCH_METHOD,e.type);
         }
     }
+
+    @Test
+    public void givenHappyMessage_WithDefaultConstructor_ShouldReturnHappy() {
+        try {
+            Constructor<?> constructor = MoodAnalyzerFactory.getConstructor("MoodAnalyzer");
+            Object moodObject =  MoodAnalyzerFactory.createMoodAnalyzer(constructor);
+            MoodAnalyzerFactory.setFieldValue(moodObject,"message","I am in Happy mood");
+            Object mood = MoodAnalyzerFactory.invokeMethod(moodObject,"analyseMood");
+            Assert.assertEquals("HAPPY",mood);
+        } catch (MoodAnalysisException e) {
+            e.printStackTrace();
+        }
+    }
+
 }
