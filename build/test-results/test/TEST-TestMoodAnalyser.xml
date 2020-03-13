@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TestMoodAnalyser" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-03-13T05:44:11" hostname="administrator-LIVA-Z2V" time="0.006">
+<testsuite name="TestMoodAnalyser" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-03-13T06:56:43" hostname="administrator-LIVA-Z2V" time="0.014">
   <properties/>
-  <testcase name="givenHappyMessage_WithDefaultConstructor_ShouldReturnHappy" classname="TestMoodAnalyser" time="0.006"/>
+  <testcase name="SettingNullMessage_WithReflector_ShouldThrowException" classname="TestMoodAnalyser" time="0.014"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
